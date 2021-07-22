@@ -1,0 +1,42 @@
+.nav {
+  color: $color-grey-light;
+  font-weight: 700;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 6rem;
+
+  &__logo {
+    align-self: center;
+    margin-right: 4rem;
+  }
+
+  &__auth {
+    margin-left: auto;
+    display: flex;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 3rem;
+  }
+
+  &__item {
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-bottom: 2px solid $color-primary-cyan;
+      transform: translateY(-0.1rem);
+    }
+  }
+
+  &__btn:not(:last-child) {
+    margin-right: 2.5rem;
+  }
+}

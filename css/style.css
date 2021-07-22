@@ -1,0 +1,74 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: "Poppins", san-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.6; }
+
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 0 8%;
+  padding-top: 5rem; }
+
+.btn {
+  font-family: inherit;
+  color: #bfbfbf;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-radius: 100px;
+  outline: none;
+  border: none;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2acfcf;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease; }
+  .btn--login {
+    background-color: transparent;
+    color: #bfbfbf; }
+  .btn:hover {
+    background-color: #26baba;
+    color: #fff;
+    transform: translateY(-0.3rem); }
+
+.nav {
+  color: #bfbfbf;
+  font-weight: 700;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 6rem; }
+  .nav__logo {
+    align-self: center;
+    margin-right: 4rem; }
+  .nav__auth {
+    margin-left: auto;
+    display: flex; }
+  .nav__list {
+    display: flex;
+    list-style: none; }
+  .nav__item:not(:last-child) {
+    margin-right: 3rem; }
+  .nav__item {
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease; }
+    .nav__item:hover {
+      border-bottom: 2px solid #2acfcf;
+      transform: translateY(-0.1rem); }
+  .nav__btn:not(:last-child) {
+    margin-right: 2.5rem; }

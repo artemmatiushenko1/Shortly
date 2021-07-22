@@ -1,0 +1,61 @@
+$color-primary-cyan: hsl(180, 66%, 49%);
+$color-primary-dark-violet: hsl(257, 27%, 26%);
+$color-grey-light: hsl(0, 0%, 75%);
+
+$font-poppins: "Poppins", san-serif;
+
+html {
+  font-size: 62.5%; //10px = 1rem
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-poppins;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 0 8%;
+  padding-top: 5rem;
+}
+
+.btn {
+  font-family: inherit;
+  color: $color-grey-light;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-radius: 100px;
+  outline: none;
+  border: none;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-primary-cyan;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &--login {
+    background-color: transparent;
+    color: $color-grey-light;
+  }
+
+  &:hover {
+    background-color: darken($color: $color-primary-cyan, $amount: 5);
+    color: #fff;
+    transform: translateY(-0.3rem);
+  }
+}
