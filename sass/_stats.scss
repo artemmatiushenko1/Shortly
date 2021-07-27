@@ -1,3 +1,93 @@
 .stats {
   background-color: #f0f1f6;
+  margin-top: -8.5rem;
+  padding-bottom: 11rem;
+
+  .heading-secondary {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  &__text {
+    text-align: center;
+    max-width: 50rem;
+    margin: 0 auto;
+    font-size: 1.7rem;
+    color: $color-grayish-violet;
+    margin-bottom: 10rem;
+  }
+
+  &__cards {
+    display: flex;
+    min-height: 40rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 0.8rem;
+      background-color: $color-primary-cyan;
+      position: absolute;
+      top: 50%;
+    }
+  }
+}
+
+// CARD COMPONENT
+.card {
+  background-color: #fff;
+  border-radius: 0.6rem;
+  flex: 1;
+  padding: 8.5rem 3.5rem 3.5rem 3.5rem;
+  position: relative;
+  transition: all 0.2s ease;
+
+  &:not(:last-child) {
+    margin-right: 3.5rem;
+  }
+
+  &__icon {
+    display: inline-block;
+    height: 8.5rem;
+    width: 8.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: $color-primary-dark-violet;
+    position: absolute;
+    top: -4.5rem;
+
+    img {
+      width: 50%;
+      height: auto;
+    }
+  }
+
+  .heading-tertiary {
+    margin-bottom: 3rem;
+  }
+
+  &__text {
+    color: $color-grayish-violet;
+    font-size: 1.7rem;
+    line-height: 1.7;
+  }
+
+  &--1 {
+    align-self: flex-start;
+  }
+
+  &--2 {
+    align-self: center;
+  }
+
+  &--3 {
+    align-self: flex-end;
+  }
+
+  &:hover {
+    box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-0.5rem);
+  }
 }

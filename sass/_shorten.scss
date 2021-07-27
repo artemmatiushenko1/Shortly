@@ -1,5 +1,6 @@
 .shorten {
-  transform: translateY(-50%);
+  transform: translateY(-8.5rem);
+  margin-bottom: 12rem;
 
   &__component {
     background-color: $color-primary-dark-violet;
@@ -7,6 +8,7 @@
     background-image: url("../images/bg-shorten-desktop.svg");
     background-size: cover;
     padding: 5rem 6rem;
+    margin-bottom: 1.5rem;
   }
 
   &__form {
@@ -16,15 +18,20 @@
   &__input {
     flex: 1;
     border-radius: 0.6rem;
-    border: none;
+    border: 2px solid transparent;
     outline: none;
     font-family: inherit;
     padding: 1.5rem 2.5rem;
     font-size: 1.7rem;
     color: $color-dark-violet;
+    transition: all 0.2s ease;
 
     &::placeholder {
       color: $color-grayish-violet;
+    }
+
+    &:focus {
+      border: 2px solid $color-primary-cyan;
     }
   }
 
@@ -34,5 +41,37 @@
     font-size: 1.7rem;
     padding-right: 4rem;
     padding-left: 4rem;
+  }
+
+  &__links-list {
+    list-style: none;
+  }
+
+  &__item {
+    background-color: #fff;
+    border-radius: 0.6rem;
+    display: flex;
+    padding: 2rem 3rem;
+    align-items: center;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  &__result {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  &__copy-btn {
+    margin-left: 3rem;
+  }
+
+  &__after:link,
+  &__after:visited {
+    color: $color-primary-cyan;
+    text-decoration: none;
   }
 }

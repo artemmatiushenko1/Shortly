@@ -1,5 +1,19 @@
-.heading-primary {
-  font-size: 7rem;
+.heading {
+  color: $color-dark-violet;
   line-height: 1.2;
+}
+
+.heading-primary {
+  @extend .heading;
+  font-size: 7rem;
+}
+
+.heading-secondary {
+  @extend .heading;
+  font-size: 3.5rem;
+}
+
+.heading-tertiary {
+  @extend .heading;
   color: $color-dark-violet;
 }
