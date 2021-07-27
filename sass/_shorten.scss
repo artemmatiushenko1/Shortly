@@ -1,0 +1,38 @@
+.shorten {
+  transform: translateY(-50%);
+
+  &__component {
+    background-color: $color-primary-dark-violet;
+    border-radius: 0.6rem;
+    background-image: url("../images/bg-shorten-desktop.svg");
+    background-size: cover;
+    padding: 5rem 6rem;
+  }
+
+  &__form {
+    display: flex;
+  }
+
+  &__input {
+    flex: 1;
+    border-radius: 0.6rem;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    padding: 1.5rem 2.5rem;
+    font-size: 1.7rem;
+    color: $color-dark-violet;
+
+    &::placeholder {
+      color: $color-grayish-violet;
+    }
+  }
+
+  &__btn {
+    margin-left: 2.5rem;
+    border-radius: 0.6rem;
+    font-size: 1.7rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+}

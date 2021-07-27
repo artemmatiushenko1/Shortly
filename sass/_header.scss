@@ -1,0 +1,28 @@
+.header {
+  color: $color-dark-violet;
+  padding-bottom: 15rem;
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    height: auto;
+    max-width: 100%;
+    transform: translateX(25%);
+  }
+
+  &__text {
+    color: $color-grayish-violet;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  &__btn {
+    margin-top: 4rem;
+    font-size: 1.7rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+}

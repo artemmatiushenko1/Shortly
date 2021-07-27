@@ -23,119 +23,147 @@
   </head>
   <body>
     <div class="container">
-      <nav class="nav">
-        <img src="images/logo.svg" alt="logo" class="nav__logo" />
-        <ul class="nav__list">
-          <li class="nav__item">Features</li>
-          <li class="nav__item">Pricing</li>
-          <li class="nav__item">Resources</li>
-        </ul>
-        <div class="nav__auth">
-          <button class="nav__btn btn btn--login">Login</button>
-          <button class="nav__btn btn">Sign Up</button>
+      <nav class="nav section">
+        <div class="nav__content content">
+          <img src="images/logo.svg" alt="logo" class="nav__logo" />
+          <ul class="nav__list">
+            <li class="nav__item">Features</li>
+            <li class="nav__item">Pricing</li>
+            <li class="nav__item">Resources</li>
+          </ul>
+          <div class="nav__auth">
+            <button class="nav__btn btn btn--login">Login</button>
+            <button class="nav__btn btn">Sign Up</button>
+          </div>
         </div>
       </nav>
-
-      <header class="header">
-        <h1 class="heading-primary">More than just shorter links</h1>
-        <p class="header__text">
-          Build your brand’s recognition and get detailed insights on how your
-          links are performing.
-        </p>
-        <img
-          src="images/illustration-working.svg"
-          alt="header img"
-          class="header__img"
-        />
-        <button class="btn header__btn">Get Started</button>
+      <header class="header section">
+        <div class="header__content content">
+          <div class="header__text-box">
+            <h1 class="heading-primary">More than just shorter links</h1>
+            <p class="header__text">
+              Build your brand’s recognition and get detailed insights on how
+              your links are performing.
+            </p>
+            <button class="btn header__btn u-mtop--small">Get Started</button>
+          </div>
+          <img
+            src="images/illustration-working.svg"
+            alt="header img"
+            class="header__img"
+          />
+        </div>
       </header>
 
-      <section class="shorten-section">
-        <form action="#" class="shorten">
-          <input
-            type="#"
-            class="shorten__input"
-            placeholder="Shorten a link here..."
-          />
-          <button type="submit" class="btn shorten__btn">Shorten It!</button>
-        </form>
-      </section>
-
-      <section class="section-stats">
-        <h2 class="heading-secondary">Advanced Statistics</h2>
-        <p class="section-stats__text">
-          Track how your links are performing across the web with our advanced
-          statistics dashboard.
-        </p>
-
-        <div class="section-stats__cards">
-          <div class="card card--1">
-            <div class="card__icon">
-              <img src="images/icon-brand-recognition.svg" alt="card icon 1" />
+      <div class="u-bc__grey">
+        <section class="section shorten">
+          <div class="content">
+            <div class="shorten__component">
+              <form action="#" class="shorten__form">
+                <input
+                  type="#"
+                  class="shorten__input"
+                  placeholder="Shorten a link here..."
+                />
+                <button type="submit" class="btn shorten__btn">
+                  Shorten It!
+                </button>
+              </form>
             </div>
-            <h3 class="heading__tertiary">Brand Recognition</h3>
-            <p class="card__text">
-              Boost your brand recognition with each click. Generic links don’t
-              mean a thing. Branded links help instil confidence in your
-              content.
-            </p>
           </div>
+        </section>
 
-          <div class="card card--2">
-            <div class="card__icon">
-              <img src="images/icon-detailed-records.svg" alt="card icon 2" />
-            </div>
-            <h3 class="heading__tertiary">Detailed Records</h3>
-            <p class="card__text">
-              Gain insights into who is clicking your links. Knowing when and
-              where people engage with your content helps inform better
-              decisions.
+        <section class="section stats">
+          <div class="content">
+            <h2 class="heading-secondary">Advanced Statistics</h2>
+            <p class="section-stats__text">
+              Track how your links are performing across the web with our
+              advanced statistics dashboard.
             </p>
-          </div>
 
-          <div class="card card--3">
-            <div class="card__icon">
-              <img src="images/icon-fully-customizable.svg" alt="card icon 3" />
+            <div class="section-stats__cards">
+              <div class="card card--1">
+                <div class="card__icon">
+                  <img
+                    src="images/icon-brand-recognition.svg"
+                    alt="card icon 1"
+                  />
+                </div>
+                <h3 class="heading__tertiary">Brand Recognition</h3>
+                <p class="card__text">
+                  Boost your brand recognition with each click. Generic links
+                  don’t mean a thing. Branded links help instil confidence in
+                  your content.
+                </p>
+              </div>
+
+              <div class="card card--2">
+                <div class="card__icon">
+                  <img
+                    src="images/icon-detailed-records.svg"
+                    alt="card icon 2"
+                  />
+                </div>
+                <h3 class="heading__tertiary">Detailed Records</h3>
+                <p class="card__text">
+                  Gain insights into who is clicking your links. Knowing when
+                  and where people engage with your content helps inform better
+                  decisions.
+                </p>
+              </div>
+
+              <div class="card card--3">
+                <div class="card__icon">
+                  <img
+                    src="images/icon-fully-customizable.svg"
+                    alt="card icon 3"
+                  />
+                </div>
+                <h3 class="heading__tertiary">Fully Customizable</h3>
+                <p class="card__text">
+                  Improve brand awareness and content discoverability through
+                  customizable links, supercharging audience engagement.
+                </p>
+              </div>
             </div>
-            <h3 class="heading__tertiary">Fully Customizable</h3>
-            <p class="card__text">
-              Improve brand awareness and content discoverability through
-              customizable links, supercharging audience engagement.
-            </p>
           </div>
+        </section>
+      </div>
+
+      <section class="section-cta section">
+        <div class="content">
+          <h2 class="heading-secondary">Boost your links today</h2>
+          <button class="btn section-cta__btn">Get Started</button>
         </div>
       </section>
 
-      <section class="section-cta">
-        <h2 class="heading-secondary">Boost your links today</h2>
-        <button class="btn section-cta__btn">Get Started</button>
-      </section>
+      <footer class="footer section">
+        <div class="content">
+          <img src="images/logo.svg" alt="logo" class="footer__logo" />
 
-      <footer class="footer">
-        <img src="images/logo.svg" alt="logo" class="footer__logo" />
+          <div class="footer__links">
+            <ul class="links-list links-list__feautures">
+              <h4 class="heading-fourth">Features</h4>
+              <li class="links-list__item">Link Shortening</li>
+              <li class="links-list__item">Branded Links</li>
+              <li class="links-list__item">Analytics</li>
+            </ul>
 
-        <div class="footer__links">
-          <ul class="links-list links-list__feautures">
-            <h4 class="heading-fourth">Features</h4>
-            <li class="links-list__item">Link Shortening</li>
-            <li class="links-list__item">Branded Links</li>
-            <li class="links-list__item">Analytics</li>
-          </ul>
+            <ul class="links-list links-list__resources">
+              <h4 class="heading-fourth">Resources</h4>
+              <li class="links-list__item">Blog</li>
+              <li class="links-list__item">Developers</li>
+              <li class="links-list__item">Support</li>
+            </ul>
 
-          <ul class="links-list links-list__resources">
-            <h4 class="heading-fourth">Resources</h4>
-            <li class="links-list__item">Blog</li>
-            <li class="links-list__item">Developers</li>
-            <li class="links-list__item">Support</li>
-          </ul>
-
-          <ul class="links-list links-list__resources">
-            <h4 class="heading-fourth">Company</h4>
-            <li class="links-list__item">About</li>
-            <li class="links-list__item">Our Team</li>
-            <li class="links-list__item">Careers</li>
-            <li class="links-list__item">Contact</li>
-          </ul>
+            <ul class="links-list links-list__resources">
+              <h4 class="heading-fourth">Company</h4>
+              <li class="links-list__item">About</li>
+              <li class="links-list__item">Our Team</li>
+              <li class="links-list__item">Careers</li>
+              <li class="links-list__item">Contact</li>
+            </ul>
+          </div>
         </div>
       </footer>
     </div>

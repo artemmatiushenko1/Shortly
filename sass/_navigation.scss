@@ -1,10 +1,12 @@
 .nav {
-  color: $color-grey-light;
-  font-weight: 700;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  margin-bottom: 6rem;
+  &__content {
+    color: $color-grey-light;
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 7rem;
+  }
 
   &__logo {
     align-self: center;
@@ -14,6 +16,10 @@
   &__auth {
     margin-left: auto;
     display: flex;
+  }
+
+  &__btn:not(:last-child) {
+    margin-right: 1.5rem;
   }
 
   &__list {
@@ -34,9 +40,5 @@
       border-bottom: 2px solid $color-primary-cyan;
       transform: translateY(-0.1rem);
     }
-  }
-
-  &__btn:not(:last-child) {
-    margin-right: 2.5rem;
   }
 }
