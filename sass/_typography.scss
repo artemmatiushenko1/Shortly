@@ -11,9 +11,19 @@
 .heading-secondary {
   @extend .heading;
   font-size: 3.5rem;
+
+  &--white {
+    color: #fff;
+  }
 }
 
 .heading-tertiary {
   @extend .heading;
   color: $color-dark-violet;
+}
+
+.heading-fourth {
+  @extend .heading;
+  color: #fff;
+  font-size: 1.8rem;
 }
