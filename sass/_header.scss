@@ -34,6 +34,7 @@
     color: $color-grayish-violet;
     font-size: 2rem;
     font-weight: 500;
+    margin-top: 1rem;
 
     @media only screen and (max-width: $bp-largest) {
       font-size: 1.8rem;
@@ -45,7 +46,7 @@
   }
 
   &__btn {
-    margin-top: 4rem;
+    margin-top: 2rem;
     font-size: 1.7rem;
     padding-right: 4rem;
     padding-left: 4rem;

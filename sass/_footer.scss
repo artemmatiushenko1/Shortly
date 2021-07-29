@@ -4,13 +4,17 @@
 
   .content {
     display: grid;
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: max-content 1fr;
     grid-column-gap: 25rem;
     grid-row-gap: 3rem;
 
     @media only screen and (max-width: $bp-small) {
       grid-template-columns: 1fr;
       // justify-items: center;
+    }
+
+    @media only screen and (max-width: $bp-tiny) {
+      justify-items: center;
     }
   }
 
@@ -19,7 +23,17 @@
   }
 
   &__logo {
-    fill: #fff;
+    width: 100%;
+
+    @media only screen and (max-width: $bp-small) {
+      width: 28%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: inline-block;
+    }
   }
 
   &__icon {
@@ -39,6 +53,11 @@
     grid-column-gap: 10rem;
     grid-row-gap: 3rem;
     justify-items: start;
+
+    @media only screen and (max-width: $bp-tiny) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
   }
 }
 
@@ -58,5 +77,9 @@
     &:hover {
       color: lighten($color-grey-light, 25);
     }
+  }
+
+  @media only screen and (max-width: $bp-tiny) {
+    text-align: center;
   }
 }
