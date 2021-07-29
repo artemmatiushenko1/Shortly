@@ -4,6 +4,12 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 56.2em) {
+    html {
+      font-size: 46.875%; } }
 
 *,
 *::after,
@@ -17,7 +23,8 @@ body {
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.6;
-  padding-top: 5rem; }
+  padding-top: 5rem;
+  overflow-x: hidden; }
 
 .btn {
   font-family: inherit;
@@ -58,6 +65,12 @@ body {
 
 .heading-primary {
   font-size: 7rem; }
+  @media only screen and (max-width: 75em) {
+    .heading-primary {
+      font-size: 6rem; } }
+  @media only screen and (max-width: 43.75em) {
+    .heading-primary {
+      font-size: 5rem; } }
 
 .heading-secondary {
   font-size: 3.5rem; }
@@ -80,12 +93,25 @@ body {
   margin-bottom: 7rem; }
 
 .nav__logo {
+  display: flex;
+  align-items: center;
   align-self: center;
   margin-right: 4rem; }
+  .nav__logo img {
+    width: 100%; }
+    @media only screen and (max-width: 75em) {
+      .nav__logo img {
+        width: 80%; } }
+    @media only screen and (max-width: 37.5em) {
+      .nav__logo img {
+        width: 60%; } }
 
 .nav__auth {
   margin-left: auto;
   display: flex; }
+  @media only screen and (max-width: 37.5em) {
+    .nav__auth {
+      display: none; } }
 
 .nav__btn:not(:last-child) {
   margin-right: 1.5rem; }
@@ -93,6 +119,9 @@ body {
 .nav__list {
   display: flex;
   list-style: none; }
+  @media only screen and (max-width: 37.5em) {
+    .nav__list {
+      display: none; } }
 
 .nav__item:not(:last-child) {
   margin-right: 3rem; }
@@ -111,14 +140,31 @@ body {
   .header__content {
     display: flex;
     align-items: center; }
+    @media only screen and (max-width: 37.5em) {
+      .header__content {
+        flex-direction: column-reverse; } }
   .header__img {
-    height: auto;
-    max-width: 100%;
-    transform: translateX(10vw); }
+    flex: 55%; }
+    .header__img img {
+      height: auto;
+      width: 100%;
+      transform: translateX(10vw); }
+      @media only screen and (max-width: 37.5em) {
+        .header__img img {
+          transform: translateX(0);
+          margin-bottom: 2.5rem; } }
+  .header__text-box {
+    flex: 45%; }
   .header__text {
     color: #9e9aa7;
     font-size: 2rem;
     font-weight: 500; }
+    @media only screen and (max-width: 75em) {
+      .header__text {
+        font-size: 1.8rem; } }
+    @media only screen and (max-width: 43.75em) {
+      .header__text {
+        font-size: 1.6rem; } }
   .header__btn {
     margin-top: 4rem;
     font-size: 1.7rem;
@@ -135,8 +181,17 @@ body {
     background-size: cover;
     padding: 5rem 6rem;
     margin-bottom: 1.5rem; }
+    @media only screen and (max-width: 56.2em) {
+      .shorten__component {
+        padding: 3.5rem 4.5rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .shorten__component {
+        padding: 2.5rem 3.5rem; } }
   .shorten__form {
     display: flex; }
+    @media only screen and (max-width: 37.5em) {
+      .shorten__form {
+        flex-direction: column; } }
   .shorten__input {
     flex: 1;
     border-radius: 0.6rem;
@@ -147,6 +202,14 @@ body {
     font-size: 1.7rem;
     color: #232127;
     transition: all 0.2s ease; }
+    @media only screen and (max-width: 56.2em) {
+      .shorten__input {
+        padding: 1rem 2rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .shorten__input {
+        padding: 0.5rem 1rem;
+        margin-bottom: 2rem;
+        line-height: 1.8; } }
     .shorten__input::placeholder {
       color: #9e9aa7; }
     .shorten__input:focus {
@@ -157,6 +220,9 @@ body {
     font-size: 1.7rem;
     padding-right: 4rem;
     padding-left: 4rem; }
+    @media only screen and (max-width: 37.5em) {
+      .shorten__btn {
+        margin-left: 0; } }
   .shorten__links-list {
     list-style: none; }
   .shorten__item {
@@ -195,6 +261,9 @@ body {
     display: flex;
     min-height: 40rem;
     position: relative; }
+    @media only screen and (max-width: 43.75em) {
+      .stats__cards {
+        flex-direction: column; } }
     .stats__cards::before {
       content: "";
       width: 100%;
@@ -202,6 +271,12 @@ body {
       background-color: #2acfcf;
       position: absolute;
       top: 50%; }
+      @media only screen and (max-width: 43.75em) {
+        .stats__cards::before {
+          width: 0.8rem;
+          height: 95%;
+          top: 0;
+          left: 50%; } }
 
 .card {
   background-color: #fff;
@@ -212,6 +287,10 @@ body {
   transition: all 0.2s ease; }
   .card:not(:last-child) {
     margin-right: 3.5rem; }
+    @media only screen and (max-width: 43.75em) {
+      .card:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 5rem; } }
   .card__icon {
     display: inline-block;
     height: 8.5rem;
@@ -223,6 +302,11 @@ body {
     background-color: #3b3054;
     position: absolute;
     top: -4.5rem; }
+    @media only screen and (max-width: 56.2em) {
+      .card__icon {
+        height: 7.5rem;
+        width: 7.5rem;
+        top: -4rem; } }
     .card__icon img {
       width: 50%;
       height: auto; }
@@ -234,10 +318,19 @@ body {
     line-height: 1.7; }
   .card--1 {
     align-self: flex-start; }
+    @media only screen and (max-width: 56.2em) {
+      .card--1 {
+        align-self: stretch; } }
   .card--2 {
     align-self: center; }
+    @media only screen and (max-width: 56.2em) {
+      .card--2 {
+        align-self: stretch; } }
   .card--3 {
     align-self: flex-end; }
+    @media only screen and (max-width: 56.2em) {
+      .card--3 {
+        align-self: stretch; } }
   .card:hover {
     box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.15);
     transform: translateY(-0.5rem); }
@@ -261,6 +354,9 @@ body {
     grid-template-columns: min-content 1fr;
     grid-column-gap: 25rem;
     grid-row-gap: 3rem; }
+    @media only screen and (max-width: 37.5em) {
+      .footer .content {
+        grid-template-columns: 1fr; } }
   .footer .heading-fourth {
     margin-bottom: 2.6rem; }
   .footer__logo {

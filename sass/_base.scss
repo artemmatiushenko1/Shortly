@@ -8,6 +8,13 @@ $color-grayish-violet: hsl(257, 7%, 63%);
 // FONTS
 $font-poppins: "Poppins", san-serif;
 
+// BREAKPOINTS
+$bp-largest: 75em; //1200px
+$bp-large: 56.2em; //900px
+$bp-medium: 43.75em; //700px;
+$bp-small: 37.5em; //600px
+
+// UTILIY CLASSES
 .u-bc__grey {
   background-color: #f0f1f6;
 }
@@ -15,6 +22,14 @@ $font-poppins: "Poppins", san-serif;
 html {
   font-size: 62.5%; //10px = 1rem
   box-sizing: border-box;
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%; //8px = 1rem
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 46.875%; //7.5px = 1rem
+  }
 }
 
 *,
@@ -31,6 +46,7 @@ body {
   font-weight: 500;
   line-height: 1.6;
   padding-top: 5rem;
+  overflow-x: hidden;
 }
 
 .btn {

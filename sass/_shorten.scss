@@ -9,10 +9,22 @@
     background-size: cover;
     padding: 5rem 6rem;
     margin-bottom: 1.5rem;
+
+    @media only screen and (max-width: $bp-large) {
+      padding: 3.5rem 4.5rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 2.5rem 3.5rem;
+    }
   }
 
   &__form {
     display: flex;
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+    }
   }
 
   &__input {
@@ -25,6 +37,16 @@
     font-size: 1.7rem;
     color: $color-dark-violet;
     transition: all 0.2s ease;
+
+    @media only screen and (max-width: $bp-large) {
+      padding: 1rem 2rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 0.5rem 1rem;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
 
     &::placeholder {
       color: $color-grayish-violet;
@@ -41,6 +63,10 @@
     font-size: 1.7rem;
     padding-right: 4rem;
     padding-left: 4rem;
+
+    @media only screen and (max-width: $bp-small) {
+      margin-left: 0;
+    }
   }
 
   &__links-list {
