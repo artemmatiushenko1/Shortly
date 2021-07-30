@@ -45,8 +45,12 @@ body {
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.6;
-  padding-top: 5rem;
   overflow-x: hidden;
+  position: relative;
+}
+
+.container {
+  padding-top: 5rem;
 }
 
 .btn {
