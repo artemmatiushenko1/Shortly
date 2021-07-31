@@ -5,7 +5,7 @@
   &__component {
     background-color: $color-primary-dark-violet;
     border-radius: 0.6rem;
-    background-image: url("../images/bg-shorten-desktop.svg");
+    background-image: url('../images/bg-shorten-desktop.svg');
     background-size: cover;
     padding: 5rem 6rem;
     margin-bottom: 1.5rem;
@@ -28,7 +28,7 @@
   }
 
   &__input {
-    flex: 1;
+    flex: 80%;
     border-radius: 0.6rem;
     border: 2px solid transparent;
     outline: none;
@@ -63,6 +63,7 @@
     font-size: 1.7rem;
     padding-right: 4rem;
     padding-left: 4rem;
+    flex: 20%;
 
     @media only screen and (max-width: $bp-small) {
       margin-left: 0;
@@ -87,7 +88,7 @@
       position: relative;
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         width: 100%;
         height: 0.5px;
@@ -104,7 +105,7 @@
 
   &__result {
     display: flex;
-    flex: 1;
+    flex: 90%;
     justify-content: space-between;
 
     @media only screen and (max-width: $bp-small) {
@@ -115,6 +116,10 @@
   }
 
   &__before {
+    max-width: 40rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     @media only screen and (max-width: $bp-small) {
       margin-bottom: 2rem;
     }
@@ -122,6 +127,7 @@
 
   &__copy-btn {
     margin-left: 3rem;
+    flex: 10%;
 
     @media only screen and (max-width: $bp-small) {
       align-self: stretch;
@@ -134,5 +140,20 @@
   &__after:visited {
     color: $color-primary-cyan;
     text-decoration: none;
+  }
+}
+
+.loader {
+  width: 4rem;
+  animation: rotate 1.5s infinite ease;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
