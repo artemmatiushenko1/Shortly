@@ -108,10 +108,11 @@ linksContainer.addEventListener('click', (e) => {
 });
 
 window.addEventListener('load', (e) => {
-  links = JSON.parse(window.localStorage.getItem('links'));
-  if (links) {
-    links.forEach((links) => {
-      appendLink(links.originalLink, links.shortenedLink);
+  const storageItems = JSON.parse(window.localStorage.getItem('links'));
+  if (storageItems) {
+    links = storageItems;
+    links.forEach((item) => {
+      appendLink(item.originalLink, item.shortenedLink);
     });
   }
 });
