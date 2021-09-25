@@ -125,8 +125,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
 
-    @media only screen and (max-width: $bp-largest) {
-      max-width: 30rem;
+    @media only screen and (max-width: $bp-large) {
+      max-width: 25rem;
     }
 
     @media only screen and (max-width: $bp-small) {

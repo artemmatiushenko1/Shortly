@@ -6,7 +6,7 @@ html {
   box-sizing: border-box; }
   @media only screen and (max-width: 75em) {
     html {
-      font-size: 50%; } }
+      font-size: 53%; } }
 
 *,
 *::after,
@@ -366,9 +366,9 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
-    @media only screen and (max-width: 75em) {
+    @media only screen and (max-width: 56.2em) {
       .shorten__before {
-        max-width: 30rem; } }
+        max-width: 25rem; } }
     @media only screen and (max-width: 37.5em) {
       .shorten__before {
         margin-bottom: 2rem; } }
