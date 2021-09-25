@@ -68,6 +68,10 @@
     @media only screen and (max-width: $bp-small) {
       margin-left: 0;
     }
+
+    @media only screen and (max-width: $bp-large) {
+      white-space: nowrap;
+    }
   }
 
   &__links-list {
@@ -120,6 +124,11 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    @media only screen and (max-width: $bp-largest) {
+      max-width: 30rem;
+    }
+
     @media only screen and (max-width: $bp-small) {
       margin-bottom: 2rem;
     }

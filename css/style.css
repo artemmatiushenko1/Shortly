@@ -7,9 +7,6 @@ html {
   @media only screen and (max-width: 75em) {
     html {
       font-size: 50%; } }
-  @media only screen and (max-width: 56.2em) {
-    html {
-      font-size: 46.875%; } }
 
 *,
 *::after,
@@ -328,6 +325,9 @@ body {
     @media only screen and (max-width: 37.5em) {
       .shorten__btn {
         margin-left: 0; } }
+    @media only screen and (max-width: 56.2em) {
+      .shorten__btn {
+        white-space: nowrap; } }
   .shorten__links-list {
     list-style: none; }
   .shorten__item {
@@ -366,6 +366,9 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
+    @media only screen and (max-width: 75em) {
+      .shorten__before {
+        max-width: 30rem; } }
     @media only screen and (max-width: 37.5em) {
       .shorten__before {
         margin-bottom: 2rem; } }

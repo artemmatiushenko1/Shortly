@@ -26,10 +26,6 @@ html {
   @media only screen and (max-width: $bp-largest) {
     font-size: 50%; //8px = 1rem
   }
-
-  @media only screen and (max-width: $bp-large) {
-    font-size: 46.875%; //7.5px = 1rem
-  }
 }
 
 *,
