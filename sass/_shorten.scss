@@ -41,6 +41,11 @@
     &--active {
       opacity: 1;
     }
+
+    @media only screen and (max-width: $bp-small) {
+      top: 4.5rem;
+      font-size: 1.3rem;
+    }
   }
 
   &__input {
@@ -60,7 +65,7 @@
 
     @media only screen and (max-width: $bp-small) {
       padding: 0.5rem 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 2.7rem;
       line-height: 1.8;
     }
 
