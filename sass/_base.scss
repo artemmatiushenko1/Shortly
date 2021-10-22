@@ -4,6 +4,7 @@ $color-primary-dark-violet: hsl(257, 27%, 26%);
 $color-grey-light: hsl(0, 0%, 75%);
 $color-dark-violet: hsl(260, 8%, 14%);
 $color-grayish-violet: hsl(257, 7%, 63%);
+$color-error: hsl(0, 87%, 67%);
 
 // FONTS
 $font-poppins: 'Poppins', san-serif;
@@ -14,6 +15,7 @@ $bp-large: 56.2em; //900px
 $bp-medium: 43.75em; //700px;
 $bp-small: 37.5em; //600px
 $bp-tiny: 23.4375em; //375px
+
 // UTILIY CLASSES
 .u-bc__grey {
   background-color: #f0f1f6;

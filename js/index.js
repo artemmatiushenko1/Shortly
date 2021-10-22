@@ -4,7 +4,7 @@ const API_URL = 'https://api.shrtco.de/v2/shorten?url=';
 const urlInput = document.querySelector('.shorten__input');
 const submitBtn = document.querySelector('.shorten__btn');
 const linksContainer = document.querySelector('.shorten__links-list');
-let links = [];
+const errorMessage = document.querySelector('.shorten__error-message');
 const btnStates = {
   default: 'Shorten it!',
   processing: `
@@ -17,6 +17,8 @@ const btnStates = {
   copy: 'Copy',
   copied: 'Copied!',
 };
+
+let links = [];
 
 const changeElContent = (el, content) => {
   el.innerHTML = content;
@@ -40,7 +42,6 @@ const shortenLink = async (link) => {
     const req = await fetch(reqURL);
     const resp = await req.json();
     const shortenedLink = resp.result.full_short_link;
-
     return shortenedLink;
   } catch (err) {
     console.error(err);
@@ -94,6 +95,15 @@ const appendLink = (originalLink, shortenedLink) => {
 submitBtn.addEventListener('click', async (e) => {
   e.preventDefault();
   const link = urlInput.value;
+
+  if (link === '' || !link.includes('https')) {
+    urlInput.classList.add('shorten__input-invalid');
+    errorMessage.classList.add('shorten__error-message--active');
+    return;
+  }
+
+  urlInput.classList.remove('shorten__input-invalid');
+  errorMessage.classList.remove('shorten__error-message--active');
   changeElContent(submitBtn, btnStates.processing);
   const shortenedLink = await shortenLink(link);
   changeElContent(submitBtn, btnStates.default);

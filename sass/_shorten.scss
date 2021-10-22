@@ -21,9 +21,25 @@
 
   &__form {
     display: flex;
+    position: relative;
 
     @media only screen and (max-width: $bp-small) {
       flex-direction: column;
+    }
+  }
+
+  &__error-message {
+    position: absolute;
+    left: 0;
+    bottom: -3rem;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: $color-error;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    &--active {
+      opacity: 1;
     }
   }
 
@@ -54,6 +70,14 @@
 
     &:focus {
       border: 2px solid $color-primary-cyan;
+    }
+
+    &-invalid {
+      border: 2px solid $color-error;
+    }
+
+    &-invalid::placeholder {
+      color: rgba($color-error, 0.5);
     }
   }
 

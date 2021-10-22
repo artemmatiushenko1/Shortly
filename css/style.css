@@ -289,10 +289,22 @@ body {
       .shorten__component {
         padding: 2rem 2rem; } }
   .shorten__form {
-    display: flex; }
+    display: flex;
+    position: relative; }
     @media only screen and (max-width: 37.5em) {
       .shorten__form {
         flex-direction: column; } }
+  .shorten__error-message {
+    position: absolute;
+    left: 0;
+    bottom: -3rem;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #f46262;
+    opacity: 0;
+    transition: opacity 0.2s ease; }
+    .shorten__error-message--active {
+      opacity: 1; }
   .shorten__input {
     flex: 80%;
     border-radius: 0.6rem;
@@ -315,6 +327,10 @@ body {
       color: #9e9aa7; }
     .shorten__input:focus {
       border: 2px solid #2acfcf; }
+    .shorten__input-invalid {
+      border: 2px solid #f46262; }
+    .shorten__input-invalid::placeholder {
+      color: rgba(244, 98, 98, 0.5); }
   .shorten__btn {
     margin-left: 2.5rem;
     border-radius: 0.6rem;
