@@ -94,6 +94,31 @@
     padding-left: 4rem;
     flex: 20%;
 
+    span {
+      transition: transform 0.3s ease;
+      transform: translateX(-8px);
+    }
+
+    .loader {
+      animation: none;
+      visibility: hidden;
+      opacity: 0;
+      transition: transform 0.3s ease;
+    }
+
+    &.loading {
+      .loader {
+        transform: translateX(-10px);
+        animation: rotate 1s linear infinite;
+        visibility: visible;
+        opacity: 1;
+      }
+
+      span {
+        transform: translateX(10px);
+      }
+    }
+
     @media only screen and (max-width: $bp-small) {
       margin-left: 0;
     }
@@ -181,17 +206,8 @@
   }
 }
 
-.loader {
-  width: 4rem;
-  animation: rotate 1.5s infinite ease;
-}
-
 @keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-
   100% {
-    transform: rotate(360deg);
+    transform: translateX(-10px) rotate(360deg);
   }
 }

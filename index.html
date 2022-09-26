@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,8 +16,11 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="css/style.css" />
-
     <title>Shortly URL shortening API</title>
+    <script
+      src="https://kit.fontawesome.com/e576d827bc.js"
+      crossorigin="anonymous"
+    ></script>
     <script defer src="js/index.js"></script>
   </head>
   <body>
@@ -72,7 +73,6 @@
           </div>
         </div>
       </header>
-
       <div class="u-bc__grey">
         <section class="section shorten">
           <div class="content">
@@ -81,19 +81,19 @@
                 <input
                   type="#"
                   class="shorten__input"
+                  name="url"
                   placeholder="Shorten a link here..."
                 />
                 <button type="submit" class="btn shorten__btn">
-                  Shorten It!
+                  <i class="fa-solid fa-spinner loader"></i>
+                  <span>Shorten It!</span>
                 </button>
                 <p class="shorten__error-message">Please add a link</p>
               </form>
             </div>
-
             <ul class="shorten__links-list"></ul>
           </div>
         </section>
-
         <section class="section stats">
           <div class="content">
             <h2 class="heading-secondary">Advanced Statistics</h2>
@@ -150,7 +150,6 @@
           </div>
         </section>
       </div>
-
       <section class="cta section">
         <div class="content">
           <h2 class="heading-secondary heading-secondary--white">
@@ -159,7 +158,6 @@
           <button class="btn cta__btn">Get Started</button>
         </div>
       </section>
-
       <footer class="footer section">
         <div class="content">
           <div class="footer__logo">
