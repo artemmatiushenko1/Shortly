@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "shortly",
   "main": "index.js",
+  "homepage": "https://artemmatiushenko1.github.io/Shortly/",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "devserver": "live-server",
