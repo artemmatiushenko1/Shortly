@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Shortly URL shortening API</title>
+    <script
+      src="https://kit.fontawesome.com/e576d827bc.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="js/index.js"></script>
+  </head>
+  <body>
+    <div class="navigation-mob">
+      <input type="checkbox" class="navigation-mob__input" id="nav-toggle" />
+      <label for="nav-toggle" class="navigation-mob__toggle-btn">
+        <span class="navigation-mob__icon"> &nbsp; </span>
+      </label>
+      <div class="navigation-mob__background">&nbsp;</div>
+      <nav class="navigation-mob__nav">
+        <ul class="navigation-mob__nav-list">
+          <li class="navigation-mob__nav-item">Features</li>
+          <li class="navigation-mob__nav-item">Pricing</li>
+          <li class="navigation-mob__nav-item">Resources</li>
+          <button class="navigation-mob__nav-btn btn btn--login">Login</button>
+          <button class="navigation-mob__nav-btn btn">Sign Up</button>
+        </ul>
+        <div class="navigation-mob__nav-auth"></div>
+      </nav>
+    </div>
+    <div class="container">
+      <nav class="nav section">
+        <div class="nav__content content">
+          <div class="nav__logo">
+            <img src="images/logo.svg" alt="logo" />
+          </div>
+          <ul class="nav__list">
+            <li class="nav__item">Features</li>
+            <li class="nav__item">Pricing</li>
+            <li class="nav__item">Resources</li>
+          </ul>
+          <div class="nav__auth">
+            <button class="nav__btn btn btn--login">Login</button>
+            <button class="nav__btn btn">Sign Up</button>
+          </div>
+        </div>
+      </nav>
+      <header class="header section">
+        <div class="header__content content">
+          <div class="header__text-box">
+            <h1 class="heading-primary">More than just shorter links</h1>
+            <p class="header__text">
+              Build your brand’s recognition and get detailed insights on how
+              your links are performing.
+            </p>
+            <button class="btn header__btn u-mtop--small">Get Started</button>
+          </div>
+          <div class="header__img">
+            <img src="images/illustration-working.svg" alt="header img" />
+          </div>
+        </div>
+      </header>
+      <div class="u-bc__grey">
+        <section class="section shorten">
+          <div class="content">
+            <div class="shorten__component">
+              <form action="#" class="shorten__form">
+                <input
+                  type="#"
+                  class="shorten__input"
+                  name="url"
+                  placeholder="Shorten a link here..."
+                />
+                <button type="submit" class="btn shorten__btn">
+                  <i class="fa-solid fa-spinner loader"></i>
+                  <span>Shorten It!</span>
+                </button>
+                <p class="shorten__error-message"></p>
+              </form>
+            </div>
+            <ul class="shorten__links-list"></ul>
+          </div>
+        </section>
+        <section class="section stats">
+          <div class="content">
+            <h2 class="heading-secondary">Advanced Statistics</h2>
+            <p class="stats__text">
+              Track how your links are performing across the web with our
+              advanced statistics dashboard.
+            </p>
+            <div class="stats__cards">
+              <div class="card card--1">
+                <div class="card__icon">
+                  <img
+                    src="images/icon-brand-recognition.svg"
+                    alt="card icon 1"
+                  />
+                </div>
+                <h3 class="heading-tertiary">Brand Recognition</h3>
+                <p class="card__text">
+                  Boost your brand recognition with each click. Generic links
+                  don’t mean a thing. Branded links help instil confidence in
+                  your content.
+                </p>
+              </div>
+              <div class="card card--2">
+                <div class="card__icon">
+                  <img
+                    src="images/icon-detailed-records.svg"
+                    alt="card icon 2"
+                  />
+                </div>
+                <h3 class="heading-tertiary">Detailed Records</h3>
+                <p class="card__text">
+                  Gain insights into who is clicking your links. Knowing when
+                  and where people engage with your content helps inform better
+                  decisions.
+                </p>
+              </div>
+              <div class="card card--3">
+                <div class="card__icon">
+                  <img
+                    src="images/icon-fully-customizable.svg"
+                    alt="card icon 3"
+                  />
+                </div>
+                <h3 class="heading-tertiary">Fully Customizable</h3>
+                <p class="card__text">
+                  Improve brand awareness and content discoverability through
+                  customizable links, supercharging audience engagement.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="cta section">
+        <div class="content">
+          <h2 class="heading-secondary heading-secondary--white">
+            Boost your links today
+          </h2>
+          <button class="btn cta__btn">Get Started</button>
+        </div>
+      </section>
+      <footer class="footer section">
+        <div class="content">
+          <div class="footer__logo">
+            <img src="images/logo-white.svg" alt="logo" />
+          </div>
+          <div class="footer__links">
+            <ul class="links-list links-list__feautures">
+              <h4 class="heading-fourth">Features</h4>
+              <li class="links-list__item">Link Shortening</li>
+              <li class="links-list__item">Branded Links</li>
+              <li class="links-list__item">Analytics</li>
+            </ul>
+            <ul class="links-list links-list__resources">
+              <h4 class="heading-fourth">Resources</h4>
+              <li class="links-list__item">Blog</li>
+              <li class="links-list__item">Developers</li>
+              <li class="links-list__item">Support</li>
+            </ul>
+            <ul class="links-list links-list__company">
+              <h4 class="heading-fourth">Company</h4>
+              <li class="links-list__item">About</li>
+              <li class="links-list__item">Our Team</li>
+              <li class="links-list__item">Careers</li>
+              <li class="links-list__item">Contact</li>
+            </ul>
+            <ul class="links-list links-list__social">
+              <svg class="footer__icon">
+                <use xlink:href="images/social-sprite.svg#icon-facebook"></use>
+              </svg>
+              <svg class="footer__icon">
+                <use
+                  xlink:href="images/social-sprite.svg#icon-instagram"
+                ></use></svg
+              ><svg class="footer__icon">
+                <use
+                  xlink:href="images/social-sprite.svg#icon-pinterest"
+                ></use></svg
+              ><svg class="footer__icon">
+                <use xlink:href="images/social-sprite.svg#icon-twitter"></use>
+              </svg>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+// COLORS
+$color-primary-cyan: hsl(180, 66%, 49%);
+$color-primary-dark-violet: hsl(257, 27%, 26%);
+$color-grey-light: hsl(0, 0%, 75%);
+$color-dark-violet: hsl(260, 8%, 14%);
+$color-grayish-violet: hsl(257, 7%, 63%);
+$color-error: hsl(0, 87%, 67%);
+
+// FONTS
+$font-poppins: 'Poppins', san-serif;
+
+// BREAKPOINTS
+$bp-largest: 75em; //1200px
+$bp-large: 56.2em; //900px
+$bp-medium: 43.75em; //700px;
+$bp-small: 37.5em; //600px
+$bp-tiny: 23.4375em; //375px
+
+// UTILIY CLASSES
+.u-bc__grey {
+  background-color: #f0f1f6;
+}
+
+html {
+  font-size: 62.5%; //10px = 1rem
+  box-sizing: border-box;
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 53%; //8px = 1rem
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-poppins;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.container {
+  padding-top: 5rem;
+}
+
+.btn {
+  font-family: inherit;
+  color: $color-grey-light;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-radius: 100px;
+  outline: none;
+  border: none;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-primary-cyan;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &--login {
+    background-color: transparent;
+    color: $color-grey-light;
+  }
+
+  &:hover {
+    background-color: lighten($color: $color-primary-cyan, $amount: 20);
+    color: #fff;
+    transform: translateY(-0.3rem);
+  }
+}
+
+.section {
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 0 5%;
+}

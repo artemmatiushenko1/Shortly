@@ -1,0 +1,84 @@
+.footer {
+  background-color: $color-dark-violet;
+  padding: 5.5rem 0;
+
+  .content {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-column-gap: 25rem;
+    grid-row-gap: 3rem;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: 1fr;
+    }
+
+    @media only screen and (max-width: $bp-tiny) {
+      justify-items: center;
+    }
+  }
+
+  .heading-fourth {
+    margin-bottom: 2.6rem;
+  }
+
+  &__logo {
+    width: 100%;
+
+    @media only screen and (max-width: $bp-small) {
+      width: 28%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: inline-block;
+    }
+  }
+
+  &__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    display: inline-block;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-column-gap: 10rem;
+    grid-row-gap: 3rem;
+    justify-items: start;
+
+    @media only screen and (max-width: $bp-tiny) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+  }
+}
+
+.links-list {
+  list-style: none;
+
+  &__item {
+    color: $color-grey-light;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    &:hover {
+      color: lighten($color-grey-light, 25);
+    }
+  }
+
+  @media only screen and (max-width: $bp-tiny) {
+    text-align: center;
+  }
+}

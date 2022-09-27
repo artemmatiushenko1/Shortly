@@ -1,0 +1,54 @@
+.header {
+  color: $color-dark-violet;
+  padding-bottom: 15rem;
+
+  &__content {
+    display: flex;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__img {
+    flex: 55%;
+
+    img {
+      height: auto;
+      width: 100%;
+      transform: translateX(10vw);
+
+      @media only screen and (max-width: $bp-small) {
+        transform: translateX(0);
+        margin-bottom: 2.5rem;
+      }
+    }
+  }
+
+  &__text-box {
+    flex: 45%;
+  }
+
+  &__text {
+    color: $color-grayish-violet;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+
+    @media only screen and (max-width: $bp-largest) {
+      font-size: 1.8rem;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__btn {
+    margin-top: 2rem;
+    font-size: 1.7rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+}
