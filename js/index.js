@@ -16,6 +16,10 @@ class App {
     this.renderLinks();
 
     this.refs.form.addEventListener('submit', this.handleSubmit.bind(this));
+    this.refs.linksContainer.addEventListener(
+      'click',
+      this.handleCopyLink.bind(this)
+    );
   }
 
   getAPIurl(params) {
@@ -64,6 +68,22 @@ class App {
     }
   }
 
+  handleCopyLink(e) {
+    const copyBtn = e.target.closest('.shorten__copy-btn');
+    if (!copyBtn) return;
+    const linkIndex = Number(copyBtn.dataset.link_id);
+    const link = this.links[linkIndex];
+
+    this.copyLink(link.shortend, () => {
+      const prevCopyBtnContent = copyBtn.textContent;
+      this.setCopyBtnContent(copyBtn, 'Copied!');
+
+      setTimeout(() => {
+        this.setCopyBtnContent(copyBtn, prevCopyBtnContent);
+      }, 1500);
+    });
+  }
+
   validateLink(url) {
     try {
       if (url === '') {
@@ -100,6 +120,10 @@ class App {
     }
   }
 
+  setCopyBtnContent(buttonEl, content) {
+    buttonEl.textContent = content;
+  }
+
   copyLink(url, onSuccess) {
     const clipboardItem = new ClipboardItem({
       'text/plain': new Blob([url], { type: 'text/plain' }),
@@ -114,6 +138,7 @@ class App {
 
   getLinksFromLocalStorage() {
     const links = window.localStorage.getItem('links');
+
     if (links || links?.length > 0) {
       this.links = JSON.parse(links);
     }
@@ -121,7 +146,7 @@ class App {
 
   renderLinks() {
     const markup = this.links
-      .map(({ original, shortend }) => {
+      .map(({ original, shortend }, i) => {
         return `
           <li class="shorten__item">
             <div class="shorten__result">
@@ -134,7 +159,9 @@ class App {
                 ${shortend}
               </a>
             </div>
-            <button class="btn shorten__copy-btn">Copy</button>
+            <button data-link_id="${i}" class="btn shorten__copy-btn">
+              Copy
+            </button>
           </li>
         `;
       })
@@ -146,27 +173,3 @@ class App {
 }
 
 const app = new App();
-// const copyLink = (targetEl) => {
-//   const copyBtn = targetEl.closest('.shorten__copy-btn');
-//   const linkComponent = targetEl.closest('.shorten__item');
-//   if (linkComponent) {
-//     const link = linkComponent
-//       .querySelector('.shorten__after')
-//       .getAttribute('href');
-
-//     const clipboardItem = [
-//       new ClipboardItem({
-//         'text/plain': new Blob([link], { type: 'text/plain' }),
-//       }),
-//     ];
-
-//     navigator.clipboard.write(clipboardItem).then(function () {
-//       if (copyBtn) {
-//         changeElContent(copyBtn, btnStates.copied);
-//         setTimeout(() => {
-//           changeElContent(copyBtn, btnStates.copy);
-//         }, 2000);
-//       }
-//     });
-//   }
-// };
