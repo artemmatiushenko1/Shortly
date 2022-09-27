@@ -15,12 +15,13 @@ class App {
     this.getLinksFromLocalStorage();
     this.renderLinks();
 
-    this.refs.form.addEventListener('submit', this.handleOnSubmit.bind(this));
+    this.refs.form.addEventListener('submit', this.handleSubmit.bind(this));
   }
 
   getAPIurl(params) {
     const url = new URL(this.#BASE_API_URL);
     url.search = new URLSearchParams(params).toString();
+
     return url;
   }
 
@@ -34,22 +35,50 @@ class App {
         return shortendLink;
       }
     } catch (err) {
-      console.log(err);
+      this.setUrlInputValidationMsg(err.message);
     }
   }
 
-  async handleOnSubmit(e) {
+  async handleSubmit(e) {
     e.preventDefault();
-    const inputUrl = new FormData(this.refs.form).get('url');
 
-    this.setSubmitBtnLoading(true);
-    const shortendLink = await this.shortenLink(inputUrl);
-    this.setSubmitBtnLoading(false);
+    try {
+      const inputUrl = new FormData(this.refs.form).get('url');
+      const { isValid, message } = this.validateLink(inputUrl);
 
-    if (shortendLink) {
-      this.links.push({ original: inputUrl, shortend: shortendLink });
-      this.persistLinks();
-      this.renderLinks();
+      if (!isValid) {
+        throw new Error(message);
+      }
+
+      this.setSubmitBtnLoading(true);
+      const shortendLink = await this.shortenLink(inputUrl);
+      this.setSubmitBtnLoading(false);
+
+      if (shortendLink) {
+        this.links.unshift({ original: inputUrl, shortend: shortendLink });
+        this.persistLinks();
+        this.renderLinks();
+      }
+    } catch (e) {
+      this.setUrlInputValidationState({ message: e.message, isValid: false });
+    }
+  }
+
+  validateLink(url) {
+    try {
+      if (url === '') {
+        return {
+          isValid: false,
+          message: 'Link is required!',
+        };
+      }
+
+      return { isValid: Boolean(new URL(url)), message: null };
+    } catch (e) {
+      return {
+        isValid: false,
+        message: 'Link is not valid!',
+      };
     }
   }
 
@@ -58,6 +87,16 @@ class App {
       this.refs.submitBtn.classList.add('loading');
     } else {
       this.refs.submitBtn.classList.remove('loading');
+    }
+  }
+
+  setUrlInputValidationState({ message, isValid }) {
+    this.refs.errorMessage.innerHTML = message;
+
+    if (!isValid) {
+      this.refs.urlInput.classList.add('shorten__input-invalid');
+    } else {
+      this.refs.urlInput.classList.remove('shorten__input-invalid');
     }
   }
 
@@ -107,15 +146,6 @@ class App {
 }
 
 const app = new App();
-
-// const changeElContent = (el, content) => {
-//   el.innerHTML = content;
-// };
-
-// const clearInput = (el) => {
-//   el.value = '';
-// };
-
 // const copyLink = (targetEl) => {
 //   const copyBtn = targetEl.closest('.shorten__copy-btn');
 //   const linkComponent = targetEl.closest('.shorten__item');
@@ -140,23 +170,3 @@ const app = new App();
 //     });
 //   }
 // };
-
-// submitBtn.addEventListener('click', async (e) => {
-//   e.preventDefault();
-//   const link = urlInput.value;
-
-//   if (link === '' || !link.includes('https')) {
-//     urlInput.classList.add('shorten__input-invalid');
-//     errorMessage.classList.add('shorten__error-message--active');
-//     return;
-//   }
-
-//   urlInput.classList.remove('shorten__input-invalid');
-//   errorMessage.classList.remove('shorten__error-message--active');
-//   changeElContent(submitBtn, btnStates.processing);
-//   const shortenedLink = await shortenLink(link);
-//   changeElContent(submitBtn, btnStates.default);
-//   appendLink(link, shortenedLink);
-//   cacheLinks(link, shortenedLink);
-//   clearInput(urlInput);
-// });

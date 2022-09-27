@@ -301,7 +301,6 @@ body {
     font-size: 1.5rem;
     font-style: italic;
     color: #f46262;
-    opacity: 0;
     transition: opacity 0.2s ease; }
     .shorten__error-message--active {
       opacity: 1; }
