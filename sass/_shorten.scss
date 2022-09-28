@@ -1,6 +1,12 @@
+@use 'mixins';
+
 .shorten {
   transform: translateY(-8.5rem);
   margin-bottom: 12rem;
+
+  &__container {
+    @include container;
+  }
 
   &__component {
     background-color: $color-primary-dark-violet;

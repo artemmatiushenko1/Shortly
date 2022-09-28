@@ -1,9 +1,13 @@
 .cta {
-  background-image: url("../images/bg-boost-desktop.svg");
+  background-image: url('../images/bg-boost-desktop.svg');
   background-size: cover;
   background-color: $color-primary-dark-violet;
   text-align: center;
   padding: 5.5rem 0;
+
+  &__container {
+    @include container;
+  }
 
   &__btn {
     display: inline-block;
