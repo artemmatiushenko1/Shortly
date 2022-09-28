@@ -1,8 +1,11 @@
+@use 'mixins';
+
 .header {
   color: $color-dark-violet;
   padding-bottom: 15rem;
 
-  &__content {
+  &__container {
+    @include container;
     display: flex;
     align-items: center;
 

@@ -2,7 +2,8 @@
   background-color: $color-dark-violet;
   padding: 5.5rem 0;
 
-  .content {
+  &__container {
+    @include container;
     display: grid;
     grid-template-columns: max-content 1fr;
     grid-column-gap: 25rem;

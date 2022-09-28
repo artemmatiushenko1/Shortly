@@ -47,6 +47,8 @@ class App {
     e.preventDefault();
 
     try {
+      this.setUrlInputValidationState({ message: '', isValid: true });
+
       const inputUrl = new FormData(this.refs.form).get('url');
       const { isValid, message } = this.validateLink(inputUrl);
 
@@ -62,6 +64,7 @@ class App {
         this.links.unshift({ original: inputUrl, shortend: shortendLink });
         this.persistLinks();
         this.renderLinks();
+        this.clearUrlInput();
       }
     } catch (e) {
       this.setUrlInputValidationState({ message: e.message, isValid: false });
@@ -124,6 +127,10 @@ class App {
     buttonEl.textContent = content;
   }
 
+  clearUrlInput() {
+    this.refs.urlInput.value = '';
+  }
+
   copyLink(url, onSuccess) {
     const clipboardItem = new ClipboardItem({
       'text/plain': new Blob([url], { type: 'text/plain' }),
@@ -159,7 +166,7 @@ class App {
                 ${shortend}
               </a>
             </div>
-            <button data-link_id="${i}" class="btn shorten__copy-btn">
+            <button data-link_id="${i}" class="button-contained shorten__copy-btn">
               Copy
             </button>
           </li>

@@ -1,0 +1,10 @@
+@mixin container {
+  width: 100%;
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+@mixin section {
+  width: 100%;
+}
