@@ -1,12 +1,13 @@
 'use strict';
+
 class App {
   #BASE_API_URL = 'https://api.shrtco.de/v2/shorten';
   refs = {
     form: document.querySelector('.shorten__form'),
-    urlInput: document.querySelector('.shorten__input'),
-    submitBtn: document.querySelector('.shorten__btn'),
-    errorMessage: document.querySelector('.shorten__error-message'),
-    linksContainer: document.querySelector('.shorten__links-list'),
+    urlInput: document.querySelector('.shorten__form-input'),
+    submitBtn: document.querySelector('.shorten__form-submit-btn'),
+    errorMessage: document.querySelector('.shorten__form-error-message'),
+    linksContainer: document.querySelector('.shorten__list'),
   };
 
   links = [];
@@ -117,9 +118,9 @@ class App {
     this.refs.errorMessage.innerHTML = message;
 
     if (!isValid) {
-      this.refs.urlInput.classList.add('shorten__input-invalid');
+      this.refs.urlInput.classList.add('shorten__form-input-invalid');
     } else {
-      this.refs.urlInput.classList.remove('shorten__input-invalid');
+      this.refs.urlInput.classList.remove('shorten__form-input-invalid');
     }
   }
 
@@ -155,18 +156,18 @@ class App {
     const markup = this.links
       .map(({ original, shortend }, i) => {
         return `
-          <li class="shorten__item">
-            <div class="shorten__result">
-              <p class="shorten__before">${original}</p>
+          <li class="shorten__list-item">
+            <div class="shorten__link">
+              <p class="shorten__link-original">${original}</p>
               <a
                 target="blank"
                 href="${shortend}"
-                class="shorten__after"
+                class="shorten__link-shortened"
               >
                 ${shortend}
               </a>
             </div>
-            <button data-link_id="${i}" class="button-contained shorten__copy-btn">
+            <button data-link_id="${i}" class="button-contained">
               Copy
             </button>
           </li>

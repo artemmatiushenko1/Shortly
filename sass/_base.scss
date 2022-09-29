@@ -16,17 +16,12 @@ $bp-medium: 43.75em; //700px;
 $bp-small: 37.5em; //600px
 $bp-tiny: 23.4375em; //375px
 
-// UTILIY CLASSES
-// .u-bc__grey {
-//   background-color: #f0f1f6;
-// }
-
 html {
   font-size: 62.5%; //10px = 1rem
   box-sizing: border-box;
 
   @media only screen and (max-width: $bp-largest) {
-    font-size: 53%; //8px = 1rem
+    font-size: 53%;
   }
 }
 
@@ -45,16 +40,8 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
-  padding-top: 5rem;
 }
 
 .main {
   background-color: #f0f1f6;
 }
-
-// .content {
-//   width: 100%;
-//   max-width: 144rem;
-//   margin: 0 auto;
-//   padding: 0 5%;
-// }
