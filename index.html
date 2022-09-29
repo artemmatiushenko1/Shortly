@@ -35,9 +35,7 @@
           <li class="nav-mobile__nav-item">Features</li>
           <li class="nav-mobile__nav-item">Pricing</li>
           <li class="nav-mobile__nav-item">Resources</li>
-          <button
-            class="nav-mobile__nav-btn button-contained button-contained--transparent btn--login"
-          >
+          <button class="button-contained button-contained--transparent">
             Login
           </button>
           <button class="nav-mobile__nav-btn button-contained">Sign Up</button>
@@ -51,25 +49,27 @@
           <img src="images/logo.svg" alt="logo" />
         </div>
         <ul class="nav__list">
-          <li class="nav__item">Features</li>
-          <li class="nav__item">Pricing</li>
-          <li class="nav__item">Resources</li>
+          <li class="nav__list-item">Features</li>
+          <li class="nav__list-item">Pricing</li>
+          <li class="nav__list-item">Resources</li>
         </ul>
         <div class="nav__auth">
           <button
-            class="nav__btn button-contained button-contained--transparent"
+            class="nav__auth-btn button-contained button-contained--transparent"
           >
             Login
           </button>
-          <button class="nav__btn button-contained">Sign Up</button>
+          <button class="nav__auth-btn button-contained">Sign Up</button>
         </div>
       </div>
     </nav>
     <header class="header">
       <div class="header__container">
         <div class="header__text-box">
-          <h1 class="heading-primary">More than just shorter links</h1>
-          <p class="header__text">
+          <h1 class="header__title heading-primary">
+            More than just shorter links
+          </h1>
+          <p class="header__description">
             Build your brand’s recognition and get detailed insights on how your
             links are performing.
           </p>
@@ -85,22 +85,25 @@
     <main class="main">
       <section class="shorten">
         <div class="shorten__container">
-          <div class="shorten__component">
-            <form action="#" class="shorten__form">
-              <input
-                type="#"
-                class="shorten__input"
-                name="url"
-                placeholder="Shorten a link here..."
-              />
-              <button type="submit" class="button-contained shorten__btn">
-                <i class="fa-solid fa-spinner loader"></i>
-                <span>Shorten It!</span>
-              </button>
-              <p class="shorten__error-message"></p>
-            </form>
-          </div>
-          <ul class="shorten__links-list"></ul>
+          <form action="#" class="shorten__form">
+            <input
+              type="text"
+              class="shorten__form-input"
+              name="url"
+              placeholder="Shorten a link here..."
+            />
+            <label for="url" class="shorten__form-error-message"></label>
+            <button
+              type="submit"
+              class="button-contained shorten__form-submit-btn"
+            >
+              <i
+                class="fa-solid fa-spinner shorten__form-submit-btn-loader"
+              ></i>
+              <span>Shorten It!</span>
+            </button>
+          </form>
+          <ul class="shorten__list"></ul>
         </div>
       </section>
       <section class="stats">
@@ -167,19 +170,19 @@
           <img src="images/logo-white.svg" alt="logo" />
         </div>
         <div class="footer__links">
-          <ul class="links-list links-list__feautures">
+          <ul class="links-list">
             <h4 class="heading-fourth">Features</h4>
             <li class="links-list__item">Link Shortening</li>
             <li class="links-list__item">Branded Links</li>
             <li class="links-list__item">Analytics</li>
           </ul>
-          <ul class="links-list links-list__resources">
+          <ul class="links-list">
             <h4 class="heading-fourth">Resources</h4>
             <li class="links-list__item">Blog</li>
             <li class="links-list__item">Developers</li>
             <li class="links-list__item">Support</li>
           </ul>
-          <ul class="links-list links-list__company">
+          <ul class="links-list">
             <h4 class="heading-fourth">Company</h4>
             <li class="links-list__item">About</li>
             <li class="links-list__item">Our Team</li>
@@ -191,14 +194,12 @@
               <use xlink:href="images/social-sprite.svg#icon-facebook"></use>
             </svg>
             <svg class="footer__icon">
-              <use
-                xlink:href="images/social-sprite.svg#icon-instagram"
-              ></use></svg
-            ><svg class="footer__icon">
-              <use
-                xlink:href="images/social-sprite.svg#icon-pinterest"
-              ></use></svg
-            ><svg class="footer__icon">
+              <use xlink:href="images/social-sprite.svg#icon-instagram"></use>
+            </svg>
+            <svg class="footer__icon">
+              <use xlink:href="images/social-sprite.svg#icon-pinterest"></use>
+            </svg>
+            <svg class="footer__icon">
               <use xlink:href="images/social-sprite.svg#icon-twitter"></use>
             </svg>
           </ul>

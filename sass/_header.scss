@@ -1,5 +1,3 @@
-@use 'mixins';
-
 .header {
   color: $color-dark-violet;
   padding-bottom: 15rem;
@@ -33,7 +31,7 @@
     flex: 45%;
   }
 
-  &__text {
+  &__description {
     color: $color-grayish-violet;
     font-size: 2rem;
     font-weight: 500;

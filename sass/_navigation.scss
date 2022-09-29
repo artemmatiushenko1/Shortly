@@ -1,5 +1,3 @@
-@use 'mixins';
-
 .nav {
   &__container {
     @include container;
@@ -8,6 +6,7 @@
     font-size: 1.5rem;
     display: flex;
     align-items: center;
+    padding-top: 5rem;
     margin-bottom: 7rem;
     position: relative;
   }
@@ -38,10 +37,10 @@
     @media only screen and (max-width: $bp-small) {
       display: none;
     }
-  }
 
-  &__btn:not(:last-child) {
-    margin-right: 1.5rem;
+    &-btn:not(:last-child) {
+      margin-right: 1.5rem;
+    }
   }
 
   &__list {
@@ -50,20 +49,20 @@
     @media only screen and (max-width: $bp-small) {
       display: none;
     }
-  }
 
-  &__item:not(:last-child) {
-    margin-right: 3rem;
-  }
+    &-item {
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
 
-  &__item {
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    transition: all 0.2s ease;
+      &:not(:last-child) {
+        margin-right: 3rem;
+      }
 
-    &:hover {
-      border-bottom: 2px solid $color-primary-cyan;
-      transform: translateY(-0.1rem);
+      &:hover {
+        border-bottom: 2px solid $color-primary-cyan;
+        transform: translateY(-0.1rem);
+      }
     }
   }
 
@@ -170,7 +169,7 @@
         text-align: center;
       }
 
-      &-btn {
+      .button-contained {
         display: inline-block;
       }
     }

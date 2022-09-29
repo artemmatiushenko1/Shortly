@@ -1,5 +1,3 @@
-@use 'mixins';
-
 .shorten {
   transform: translateY(-8.5rem);
   margin-bottom: 12rem;
@@ -8,13 +6,15 @@
     @include container;
   }
 
-  &__component {
+  &__form {
     background-color: $color-primary-dark-violet;
     border-radius: 0.6rem;
     background-image: url('../images/bg-shorten-desktop.svg');
     background-size: cover;
     padding: 5rem 6rem;
     margin-bottom: 1.5rem;
+    display: flex;
+    position: relative;
 
     @media only screen and (max-width: $bp-large) {
       padding: 3.5rem 4.5rem;
@@ -22,152 +22,153 @@
 
     @media only screen and (max-width: $bp-small) {
       padding: 2rem 2rem;
-    }
-  }
-
-  &__form {
-    display: flex;
-    position: relative;
-
-    @media only screen and (max-width: $bp-small) {
       flex-direction: column;
-    }
-  }
-
-  &__error-message {
-    position: absolute;
-    left: 0;
-    bottom: -3rem;
-    font-size: 1.5rem;
-    font-style: italic;
-    color: $color-error;
-    // opacity: 0;
-    transition: opacity 0.2s ease;
-
-    &--active {
-      opacity: 1;
+      row-gap: 1rem;
     }
 
-    @media only screen and (max-width: $bp-small) {
-      top: 4.5rem;
-      font-size: 1.3rem;
-    }
-  }
+    &-input {
+      flex: 80%;
+      border-radius: 0.6rem;
+      border: 2px solid transparent;
+      outline: none;
+      font-family: inherit;
+      padding: 1.5rem 2.5rem;
+      font-size: 1.7rem;
+      color: $color-dark-violet;
+      transition: all 0.2s ease;
 
-  &__input {
-    flex: 80%;
-    border-radius: 0.6rem;
-    border: 2px solid transparent;
-    outline: none;
-    font-family: inherit;
-    padding: 1.5rem 2.5rem;
-    font-size: 1.7rem;
-    color: $color-dark-violet;
-    transition: all 0.2s ease;
+      @media only screen and (max-width: $bp-large) {
+        padding: 1rem 2rem;
+      }
 
-    @media only screen and (max-width: $bp-large) {
-      padding: 1rem 2rem;
-    }
+      @media only screen and (max-width: $bp-small) {
+        padding: 0.5rem 1rem;
+        line-height: 1.8;
+      }
 
-    @media only screen and (max-width: $bp-small) {
-      padding: 0.5rem 1rem;
-      margin-bottom: 2.7rem;
-      line-height: 1.8;
-    }
+      &::placeholder {
+        color: $color-grayish-violet;
+      }
 
-    &::placeholder {
-      color: $color-grayish-violet;
-    }
+      &:not(&-invalid):focus {
+        border: 2px solid $color-primary-cyan;
+      }
 
-    &:focus {
-      border: 2px solid $color-primary-cyan;
-    }
+      &-invalid {
+        border: 2px solid $color-error;
+      }
 
-    &-invalid {
-      border: 2px solid $color-error;
+      &-invalid::placeholder {
+        color: rgba($color-error, 0.5);
+      }
     }
 
-    &-invalid::placeholder {
-      color: rgba($color-error, 0.5);
-    }
-  }
+    &-error-message {
+      position: absolute;
+      left: 6rem;
+      bottom: 2rem;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: $color-error;
+      transition: opacity 0.2s ease;
 
-  &__btn {
-    margin-left: 2.5rem;
-    border-radius: 0.6rem;
-    font-size: 1.7rem;
-    padding-right: 4rem;
-    padding-left: 4rem;
-    flex: 20%;
+      @media only screen and (max-width: $bp-large) {
+        bottom: 0.7rem;
+        left: 4.5rem;
+      }
 
-    span {
-      transition: transform 0.3s ease;
-      transform: translateX(-8px);
-    }
-
-    .loader {
-      animation: none;
-      visibility: hidden;
-      opacity: 0;
-      transition: transform 0.3s ease;
+      @media only screen and (max-width: $bp-small) {
+        position: initial;
+        font-size: 1.3rem;
+      }
     }
 
-    &.loading {
-      .loader {
+    &-submit-btn {
+      margin-left: 2.5rem;
+      border-radius: 0.6rem;
+      font-size: 1.7rem;
+      padding-right: 4rem;
+      padding-left: 4rem;
+      flex: 20%;
+
+      span {
+        transition: transform 0.3s ease;
+        transform: translateX(-8px);
+      }
+
+      &.loading span {
+        transform: translateX(10px);
+      }
+
+      &-loader {
+        animation: none;
+        visibility: hidden;
+        opacity: 0;
+        transition: transform 0.3s ease;
+      }
+
+      &.loading &-loader {
         transform: translateX(-10px);
         animation: rotate 1s linear infinite;
         visibility: visible;
         opacity: 1;
       }
 
-      span {
-        transform: translateX(10px);
+      @media only screen and (max-width: $bp-small) {
+        margin-left: 0;
       }
-    }
 
-    @media only screen and (max-width: $bp-small) {
-      margin-left: 0;
-    }
-
-    @media only screen and (max-width: $bp-large) {
-      white-space: nowrap;
+      @media only screen and (max-width: $bp-large) {
+        white-space: nowrap;
+      }
     }
   }
 
-  &__links-list {
+  &__list {
     list-style: none;
-  }
 
-  &__item {
-    background-color: #fff;
-    border-radius: 0.6rem;
-    display: flex;
-    padding: 2rem 3rem;
-    align-items: center;
+    &-item {
+      background-color: #fff;
+      border-radius: 0.6rem;
+      display: flex;
+      padding: 2rem 3rem;
+      align-items: center;
 
-    @media only screen and (max-width: $bp-small) {
-      flex-direction: column;
-      padding: 2rem 2rem;
-      align-items: flex-start;
-      position: relative;
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
 
-      &::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 0.5px;
-        background-color: $color-grey-light;
-        top: 30%;
-        left: 0;
+      @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+        padding: 2rem 2rem;
+        align-items: flex-start;
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 0.5px;
+          background-color: $color-grey-light;
+          top: 30%;
+          left: 0;
+        }
+      }
+
+      .button-contained {
+        margin-left: 3rem;
+        flex: 10%;
+
+        @media only screen and (max-width: $bp-small) {
+          align-self: stretch;
+          margin: 0;
+          border-radius: 0.6rem;
+        }
       }
     }
   }
 
-  &__item:not(:last-child) {
-    margin-bottom: 1.5rem;
-  }
-
-  &__result {
+  &__link {
     display: flex;
     flex: 90%;
     justify-content: space-between;
@@ -177,38 +178,27 @@
       align-self: stretch;
       margin-bottom: 1rem;
     }
-  }
 
-  &__before {
-    max-width: 40rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    &-original {
+      max-width: 40rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
-    @media only screen and (max-width: $bp-large) {
-      max-width: 25rem;
+      @media only screen and (max-width: $bp-large) {
+        max-width: 25rem;
+      }
+
+      @media only screen and (max-width: $bp-small) {
+        margin-bottom: 2rem;
+      }
     }
 
-    @media only screen and (max-width: $bp-small) {
-      margin-bottom: 2rem;
+    &-shortened:link,
+    &-shortened:visited {
+      color: $color-primary-cyan;
+      text-decoration: none;
     }
-  }
-
-  &__copy-btn {
-    margin-left: 3rem;
-    flex: 10%;
-
-    @media only screen and (max-width: $bp-small) {
-      align-self: stretch;
-      margin: 0;
-      border-radius: 0.6rem;
-    }
-  }
-
-  &__after:link,
-  &__after:visited {
-    color: $color-primary-cyan;
-    text-decoration: none;
   }
 }
 
