@@ -167,7 +167,7 @@ class App {
                 ${shortend}
               </a>
             </div>
-            <button data-link_id="${i}" class="button-contained">
+            <button data-link_id="${i}" class="shorten__copy-btn button-contained">
               Copy
             </button>
           </li>
